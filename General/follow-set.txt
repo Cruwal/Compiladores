@@ -1,0 +1,32 @@
+Non-Terminal Symbol	Follow Set
+PROGRAMA	$
+CORPO	.
+DC	begin
+DC_C	procedure, var, begin
+DC_V	procedure, begin
+TIPO_VAR	;, )
+VARIAVEIS	), :
+MAIS_VAR	), :
+DC_P	begin
+PARAMETROS	;
+LISTA_PAR	)
+MAIS_PAR	)
+CORPO_P	procedure, begin
+DC_LOC	begin
+LISTA_ARG	else, ;
+ARGUMENTOS	)
+MAIS_IDENT	)
+PFALSA	else, ;
+COMANDOS	end
+CMD	else, ;
+CONDICAO	), then
+RELACAO	+, -, ident, (, numero_int, numero_real
+EXPRESSAO	), =, <>, >=, <=, >, <, then, else, ;
+OP_UN	ident, (, numero_int, numero_real
+OUTROS_TERMOS	), =, <>, >=, <=, >, <, then, else, ;
+OP_AD	+, -, ident, (, numero_int, numero_real
+TERMO	+, -, ), =, <>, >=, <=, >, <, then, else, ;
+MAIS_FATORES	+, -, ), =, <>, >=, <=, >, <, then, else, ;
+OP_MUL	ident, (, numero_int, numero_real
+FATOR	*, /, +, -, ), =, <>, >=, <=, >, <, then, else, ;
+NUMERO	;, *, /, +, -, ), =, <>, >=, <=, >, <, then, else
