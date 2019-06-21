@@ -17,7 +17,7 @@ ARGUMENTOS -> ident MAIS_IDENT
 MAIS_IDENT -> ; ARGUMENTOS | EPSILON
 PFALSA -> else CMD | EPSILON
 COMANDOS -> CMD ; COMANDOS | EPSILON
-CMD -> read ( VARIAVEIS ) | write ( VARIAVEIS ) | while ( CONDICAO ) do CMD | if CONDICAO then CMD PFALSA | ident := EXPRESSAO | ident LISTA_ARG | begin COMANDOS end | for ( numero_int to numero_int ) do
+CMD -> read ( VARIAVEIS ) | write ( VARIAVEIS ) | while ( CONDICAO ) do CMD | if CONDICAO then CMD PFALSA | ident := EXPRESSAO | ident LISTA_ARG | begin COMANDOS end | for ( numero_int to numero_int ) do CMD
 CONDICAO -> EXPRESSAO RELACAO EXPRESSAO
 RELACAO -> = | <> | >= | <= | > | <
 EXPRESSAO -> TERMO OUTROS_TERMOS
