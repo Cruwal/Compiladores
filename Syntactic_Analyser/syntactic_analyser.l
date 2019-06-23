@@ -214,8 +214,6 @@ COMENTARIO ["{"][ \ta-zA-Z_]*["}"]
 [ \t]     ;
 {COMENTARIO}  ;
 
-
-
 {NUMERO_INT}+ {return NUMERO_INT;}
 {NUMERO_REAL} {return NUMERO_REAL;}
 
@@ -227,14 +225,31 @@ COMENTARIO ["{"][ \ta-zA-Z_]*["}"]
 
 {IDENT} {struct reserved_word reserved = find_reserved_words(yytext);
 			if(strcmp(reserved.word, "@null") != 0){
-				return reserved.return_message;
+				if(strcmp(reserved.return_message, "SIMBOLO_PROGRAM") == 0) return SIMBOLO_PROGRAM;
+				else if(strcmp(reserved.return_message, "SIMBOLO_BEGIN") == 0) return SIMBOLO_BEGIN;
+				else if(strcmp(reserved.return_message, "SIMBOLO_END") == 0) return SIMBOLO_END;
+				else if(strcmp(reserved.return_message, "SIMBOLO_CONST") == 0) return SIMBOLO_CONST;
+				else if(strcmp(reserved.return_message, "SIMBOLO_VAR") == 0) return SIMBOLO_VAR;
+				else if(strcmp(reserved.return_message, "SIMBOLO_REAL") == 0) return SIMBOLO_REAL;
+				else if(strcmp(reserved.return_message, "SIMBOLO_INTEGER") == 0) return SIMBOLO_INTEGER;
+				else if(strcmp(reserved.return_message, "SIMBOLO_PROCEDURE") == 0) return SIMBOLO_PROCEDURE;
+				else if(strcmp(reserved.return_message, "SIMBOLO_ELSE") == 0) return SIMBOLO_ELSE;
+				else if(strcmp(reserved.return_message, "SIMBOLO_READ") == 0) return SIMBOLO_READ;
+				else if(strcmp(reserved.return_message, "SIMBOLO_WRITE") == 0) return SIMBOLO_WRITE;
+				else if(strcmp(reserved.return_message, "SIMBOLO_WHILE") == 0) return SIMBOLO_WHILE;
+				else if(strcmp(reserved.return_message, "SIMBOLO_IF") == 0) return SIMBOLO_IF;
+				else if(strcmp(reserved.return_message, "SIMBOLO_THEN") == 0) return SIMBOLO_THEN;
+				else if(strcmp(reserved.return_message, "SIMBOLO_DO") == 0) return SIMBOLO_DO;
+				else if(strcmp(reserved.return_message, "SIMBOLO_FOR") == 0) return SIMBOLO_FOR;
+				else if(strcmp(reserved.return_message, "SIMBOLO_TO") == 0) return SIMBOLO_TO;
+				//return reserved.return_message;
 			}
 			return IDENT;
 		}
 
 "\n" {nlines++;}
 
-. {yyerror("entrada invalida\n"); return -1;}
+. {return yytext[0];}
 %%
 /*
 int yywrap(void)

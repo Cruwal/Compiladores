@@ -954,40 +954,57 @@ YY_RULE_SETUP
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 219 "syntactic_analyser.l"
+#line 217 "syntactic_analyser.l"
 {return NUMERO_INT;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 220 "syntactic_analyser.l"
+#line 218 "syntactic_analyser.l"
 {return NUMERO_REAL;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 222 "syntactic_analyser.l"
+#line 220 "syntactic_analyser.l"
 {ECHO; yyerror("Numero mal formatado\n"); return -1;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 223 "syntactic_analyser.l"
+#line 221 "syntactic_analyser.l"
 {ECHO; yyerror("Numero mal formatado\n"); return -1;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 225 "syntactic_analyser.l"
+#line 223 "syntactic_analyser.l"
 {ECHO; yyerror("Identificador mal formatado\n"); return -1;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 226 "syntactic_analyser.l"
+#line 224 "syntactic_analyser.l"
 {ECHO; yyerror("Comentário não fechado\n"); return -1;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 228 "syntactic_analyser.l"
+#line 226 "syntactic_analyser.l"
 {struct reserved_word reserved = find_reserved_words(yytext);
 			if(strcmp(reserved.word, "@null") != 0){
-				return reserved.return_message;
+				if(strcmp(reserved.return_message, "SIMBOLO_PROGRAM") == 0) return SIMBOLO_PROGRAM;
+				else if(strcmp(reserved.return_message, "SIMBOLO_BEGIN") == 0) return SIMBOLO_BEGIN;
+				else if(strcmp(reserved.return_message, "SIMBOLO_END") == 0) return SIMBOLO_END;
+				else if(strcmp(reserved.return_message, "SIMBOLO_CONST") == 0) return SIMBOLO_CONST;
+				else if(strcmp(reserved.return_message, "SIMBOLO_VAR") == 0) return SIMBOLO_VAR;
+				else if(strcmp(reserved.return_message, "SIMBOLO_REAL") == 0) return SIMBOLO_REAL;
+				else if(strcmp(reserved.return_message, "SIMBOLO_INTEGER") == 0) return SIMBOLO_INTEGER;
+				else if(strcmp(reserved.return_message, "SIMBOLO_PROCEDURE") == 0) return SIMBOLO_PROCEDURE;
+				else if(strcmp(reserved.return_message, "SIMBOLO_ELSE") == 0) return SIMBOLO_ELSE;
+				else if(strcmp(reserved.return_message, "SIMBOLO_READ") == 0) return SIMBOLO_READ;
+				else if(strcmp(reserved.return_message, "SIMBOLO_WRITE") == 0) return SIMBOLO_WRITE;
+				else if(strcmp(reserved.return_message, "SIMBOLO_WHILE") == 0) return SIMBOLO_WHILE;
+				else if(strcmp(reserved.return_message, "SIMBOLO_IF") == 0) return SIMBOLO_IF;
+				else if(strcmp(reserved.return_message, "SIMBOLO_THEN") == 0) return SIMBOLO_THEN;
+				else if(strcmp(reserved.return_message, "SIMBOLO_DO") == 0) return SIMBOLO_DO;
+				else if(strcmp(reserved.return_message, "SIMBOLO_FOR") == 0) return SIMBOLO_FOR;
+				else if(strcmp(reserved.return_message, "SIMBOLO_TO") == 0) return SIMBOLO_TO;
+				//return reserved.return_message;
 			}
 			return IDENT;
 		}
@@ -995,20 +1012,20 @@ YY_RULE_SETUP
 case 10:
 /* rule 10 can match eol */
 YY_RULE_SETUP
-#line 235 "syntactic_analyser.l"
+#line 250 "syntactic_analyser.l"
 {nlines++;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 237 "syntactic_analyser.l"
-{yyerror("entrada invalida\n"); return -1;}
+#line 252 "syntactic_analyser.l"
+{return yytext[0];}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 238 "syntactic_analyser.l"
+#line 253 "syntactic_analyser.l"
 ECHO;
 	YY_BREAK
-#line 1012 "lex.yy.c"
+#line 1029 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2013,7 +2030,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 238 "syntactic_analyser.l"
+#line 253 "syntactic_analyser.l"
 
 /*
 int yywrap(void)
