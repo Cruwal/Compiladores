@@ -97,39 +97,99 @@ parametros: '(' lista_par ')'
     ;
 lista_par: variaveis ':' tipo_var mais_par
     | error ':' tipo_var mais_par {yyerror("ERROR 38");}
+    | variaveis error tipo_var mais_par {yyerror("ERROR 39");}
+    | variaveis ':' error mais_par {yyerror("ERROR 40");}
+    | variaveis ':' tipo_var error {yyerror("ERROR 41");}
     ;
 mais_par: ';' lista_par
+    | error lista_par {yyerror("ERROR 42");}
+    | ';' error {yyerror("ERROR 43");}
     |
     ;
 corpo_p: dc_loc SIMBOLO_BEGIN comandos SIMBOLO_END ';'
+    | error SIMBOLO_BEGIN comandos SIMBOLO_END ';' {yyerror("ERROR 44");}
+    | dc_loc error comandos SIMBOLO_END ';' {yyerror("ERROR 45");}
+    | dc_loc SIMBOLO_BEGIN error SIMBOLO_END ';' {yyerror("ERROR 46");}
+    | dc_loc SIMBOLO_BEGIN comandos error ';' {yyerror("ERROR 47");}
+    | dc_loc SIMBOLO_BEGIN comandos SIMBOLO_END error {yyerror("ERROR 48");}
     ;
 dc_loc: dc_v
+    | error {yyerror("ERROR 49");}
     ;
 lista_arg: '(' argumentos ')'
+    | error argumentos ')' {yyerror("ERROR 50");}
+    | '(' error ')' {yyerror("ERROR 51");}
+    | '(' argumentos error {yyerror("ERROR 52");}
     |
     ;
 argumentos: IDENT mais_ident
     ;
 mais_ident: ';' argumentos
+    | error mais_ident {yyerror("ERROR 53");}
+    | IDENT error {yyerror("ERROR 54");}
     |
     ;
 pfalsa: SIMBOLO_ELSE cmd
+    | error cmd {yyerror("ERROR 55");}
+    | SIMBOLO_ELSE error {yyerror("ERROR 56");}
     |
     ;
 comandos: cmd ';' comandos
+    | error ';' comandos {yyerror("ERROR 57");}
+    | cmd error comandos {yyerror("ERROR 58");}
+    | cmd ';' error {yyerror("ERROR 59");}
     |
     ;
 cmd: SIMBOLO_READ '(' variaveis ')'
+    | error '(' variaveis ')' {yyerror("ERROR 60");}
+    | SIMBOLO_READ error variaveis ')' {yyerror("ERROR 61");}
+    | SIMBOLO_READ '(' error ')' {yyerror("ERROR 62");}
+    | SIMBOLO_READ '(' variaveis error {yyerror("ERROR 63");}
     | SIMBOLO_WRITE '(' variaveis ')'
+    | error '(' variaveis ')' {yyerror("ERROR 64");}
+    | SIMBOLO_WRITE error variaveis ')' {yyerror("ERROR 65");}
+    | SIMBOLO_WRITE '(' error ')' {yyerror("ERROR 66");}
+    | SIMBOLO_WRITE '(' variaveis error {yyerror("ERROR 67");}
     | SIMBOLO_WHILE '(' condicao ')' SIMBOLO_DO cmd
-    | SIMBOLO_WHILE error condicao ')' SIMBOLO_DO cmd
+    | error '(' condicao ')' SIMBOLO_DO cmd {yyerror("ERROR 68");}
+    | SIMBOLO_WHILE error condicao ')' SIMBOLO_DO cmd {yyerror("ERROR 69");}
+    | SIMBOLO_WHILE '(' error ')' SIMBOLO_DO cmd {yyerror("ERROR 70");}
+    | SIMBOLO_WHILE '(' condicao error SIMBOLO_DO cmd {yyerror("ERROR 71");}
+    | SIMBOLO_WHILE '(' condicao ')' error cmd {yyerror("ERROR 72");}
+    | SIMBOLO_WHILE '(' condicao ')' SIMBOLO_DO error {yyerror("ERROR 73");
     | SIMBOLO_IF condicao SIMBOLO_THEN cmd pfalsa
+    | error condicao SIMBOLO_THEN cmd pfalsa {yyerror("ERROR 74");}
+    | SIMBOLO_IF error SIMBOLO_THEN cmd pfalsa {yyerror("ERROR 75");}
+    | SIMBOLO_IF condicao error cmd pfalsa {yyerror("ERROR 76");}
+    | SIMBOLO_IF condicao SIMBOLO_THEN error pfalsa {yyerror("ERROR 77");}
+    | SIMBOLO_IF condicao SIMBOLO_THEN cmd error {yyerror("ERROR 78");}
     | IDENT ':' '=' expressao
+    | error ':' '=' expressao {yyerror("ERROR 79");}
+    | IDENT error '=' expressao {yyerror("ERROR 80");}
+    | IDENT ':' error expressao {yyerror("ERROR 81");}
+    | IDENT ':' '=' error {yyerror("ERROR 82");}
     | IDENT lista_arg
+    | error lista_arg {yyerror("ERROR 83");}
+    | IDENT error {yyerror("ERROR 84");}
     | SIMBOLO_BEGIN comandos SIMBOLO_END
+    | error comandos SIMBOLO_END {yyerror("ERROR 85");}
+    | SIMBOLO_BEGIN error SIMBOLO_END {yyerror("ERROR 86");}
+    | SIMBOLO_BEGIN comandos error {yyerror("ERROR 87");}
     | SIMBOLO_FOR IDENT ':' '=' NUMERO_INT SIMBOLO_TO NUMERO_INT SIMBOLO_DO cmd
+    | error IDENT ':' '=' NUMERO_INT SIMBOLO_TO NUMERO_INT SIMBOLO_DO cmd {yyerror("ERROR 88");}
+    | SIMBOLO_FOR error ':' '=' NUMERO_INT SIMBOLO_TO NUMERO_INT SIMBOLO_DO cmd {yyerror("ERROR 89");}
+    | SIMBOLO_FOR IDENT error '=' NUMERO_INT SIMBOLO_TO NUMERO_INT SIMBOLO_DO cmd {yyerror("ERROR 90");}
+    | SIMBOLO_FOR IDENT ':' error NUMERO_INT SIMBOLO_TO NUMERO_INT SIMBOLO_DO cmd {yyerror("ERROR 91");}
+    | SIMBOLO_FOR IDENT ':' '=' error SIMBOLO_TO NUMERO_INT SIMBOLO_DO cmd {yyerror("ERROR 92");}
+    | SIMBOLO_FOR IDENT ':' '=' NUMERO_INT error NUMERO_INT SIMBOLO_DO cmd {yyerror("ERROR 93");}
+    | SIMBOLO_FOR IDENT ':' '=' NUMERO_INT SIMBOLO_TO error SIMBOLO_DO cmd {yyerror("ERROR 94");}
+    | SIMBOLO_FOR IDENT ':' '=' NUMERO_INT SIMBOLO_TO NUMERO_INT error cmd {yyerror("ERROR 95");}
+    | SIMBOLO_FOR IDENT ':' '=' NUMERO_INT SIMBOLO_TO NUMERO_INT SIMBOLO_DO error {yyerror("ERROR 96");}
     ;
 condicao: expressao relacao expressao
+    | error relacao expressao {yyerror("ERROR 97");}
+    | expressao error expressao {yyerror("ERROR 98");}
+    | expressao relacao error {yyerror("ERROR 99");}
     ;
 relacao: '='
     | '<''>'
@@ -137,33 +197,52 @@ relacao: '='
     | '<''='
     | '>'
     | '<'
+    | error {yyerror("ERROR 100");}
     ;
 expressao: termo outros_termos
+    | error outros_termos {yyerror("ERROR 101");}
+    | termo error {yyerror("ERROR 102");}
     ;
 op_un: '+'
     | '-'
+    | error {yyerror("ERROR 103");}
     |
     ;
 outros_termos: op_ad termo outros_termos
+    | error termo outros_termos {yyerror("ERROR 104");}
+    | op_ad error outros_termos {yyerror("ERROR 105");}
+    | op_ad termo error {yyerror("ERROR 106");}
     |
     ;
 op_ad: '+'
     | '-'
+    | error {yyerror("ERROR 107");}
     ;
 termo: op_un fator mais_fatores
+    | error fator mais_fatores {yyerror("ERROR 108");}
+    | op_un error mais_fatores {yyerror("ERROR 109");}
+    | op_un fator error {yyerror("ERROR 110");}
     ;
 mais_fatores: op_mul fator mais_fatores
+    | error fator mais_fatores {yyerror("ERROR 111");}
+    | op_mul error mais_fatores {yyerror("ERROR 112");}
+    | op_mul fator error {yyerror("ERROR 113");}
     |
     ;
 op_mul: '*'
     | '/'
+    | error {yyerror("ERROR 114");}
     ;
 fator: IDENT
     | numero
     | '(' expressao ')'
+    | error expressao ')' {yyerror("ERROR 115");}
+    | '(' error ')' {yyerror("ERROR 116");}
+    | '(' expressao error {yyerror("ERROR 117");}
     ;
 numero: NUMERO_INT
     | NUMERO_REAL
+    | error {yyerror("ERROR 118");}
     ;
 
 %%
