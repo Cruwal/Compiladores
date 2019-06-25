@@ -351,8 +351,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 12
-#define YY_END_OF_BUFFER 13
+#define YY_NUM_RULES 25
+#define YY_END_OF_BUFFER 26
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -360,11 +360,12 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[29] =
+static const flex_int16_t yy_accept[41] =
     {   0,
-        0,    0,   13,   11,    1,   10,    8,    7,   11,    3,
-        9,    8,    2,    7,    7,    3,    5,    0,    0,    3,
-        9,    5,    3,    6,    4,    3,    6,    0
+        0,    0,   26,   24,    1,   23,    8,    7,   17,   18,
+       13,   15,   12,   16,   21,   14,    3,    9,   11,   20,
+       10,   19,   22,    8,    2,    7,    7,    3,    5,    0,
+        0,    3,   22,    5,    3,    6,    4,    3,    6,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -372,17 +373,17 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    2,    1,    4,    5,    5,    5,    5,    1,    1,
-        1,    1,    1,    1,    6,    7,    1,    8,    8,    8,
-        8,    8,    8,    8,    8,    8,    8,    1,    1,    1,
-        1,    1,    1,    5,    9,    9,    9,    9,    9,    9,
-        9,    9,    9,    9,    9,    9,    9,    9,    9,    9,
-        9,    9,    9,    9,    9,    9,    9,    9,    9,    9,
-        1,    1,    1,    1,   10,    1,    9,    9,    9,    9,
+        1,    2,    1,    4,    5,    5,    5,    5,    1,    6,
+        7,    8,    9,   10,   11,   12,   13,   14,   14,   14,
+       14,   14,   14,   14,   14,   14,   14,   15,   16,   17,
+       18,   19,    1,    5,   20,   20,   20,   20,   20,   20,
+       20,   20,   20,   20,   20,   20,   20,   20,   20,   20,
+       20,   20,   20,   20,   20,   20,   20,   20,   20,   20,
+        1,    1,    1,    1,   21,    1,   20,   20,   20,   20,
 
-        9,    9,    9,    9,    9,    9,    9,    9,    9,    9,
-        9,    9,    9,    9,    9,    9,    9,    9,    9,    9,
-        9,    9,   11,    1,   12,    1,    1,    1,    1,    1,
+       20,   20,   20,   20,   20,   20,   20,   20,   20,   20,
+       20,   20,   20,   20,   20,   20,   20,   20,   20,   20,
+       20,   20,   22,    1,   23,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -399,50 +400,61 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[13] =
+static const YY_CHAR yy_meta[24] =
     {   0,
-        1,    2,    1,    2,    3,    1,    1,    4,    5,    6,
-        1,    2
+        1,    2,    1,    2,    3,    1,    1,    1,    1,    1,
+        1,    1,    1,    3,    1,    1,    1,    1,    1,    4,
+        4,    1,    2
     } ;
 
-static const flex_int16_t yy_base[34] =
+static const flex_int16_t yy_base[44] =
     {   0,
-        0,    0,   24,   64,   64,   64,    9,   17,   15,   23,
-        0,   30,   64,    0,    0,    0,   12,   11,   10,    0,
-        0,    9,   37,    8,    7,    0,    6,   64,   44,   47,
-       50,   53,   57
+        0,    0,   49,   85,   85,   85,   20,   39,   85,   85,
+       85,   85,   85,   34,   85,   85,   56,   85,   85,   85,
+       85,   85,   11,   22,   85,    0,   13,    0,   33,   32,
+       28,    0,   14,   27,   25,   24,   16,   26,   15,   85,
+       76,   78,   80
     } ;
 
-static const flex_int16_t yy_def[34] =
+static const flex_int16_t yy_def[44] =
     {   0,
-       28,    1,   28,   28,   28,   28,   29,   28,   28,   28,
-       30,   29,   28,    8,   31,   10,   32,   28,   33,   10,
-       30,   28,   28,   33,   33,   23,   28,    0,   28,   28,
-       28,   28,   28
+       40,    1,   40,   40,   40,   40,   41,   40,   40,   40,
+       40,   40,   40,   40,   40,   40,   40,   40,   40,   40,
+       40,   40,   40,   41,   40,    8,   40,   17,   42,   40,
+       43,   17,   40,   40,   40,   43,   43,   40,   40,    0,
+       40,   40,   40
     } ;
 
-static const flex_int16_t yy_nxt[77] =
+static const flex_int16_t yy_nxt[109] =
     {   0,
-        4,    5,    6,    7,    8,    9,    4,   10,   11,    8,
-        7,    4,   13,   27,   25,   27,   22,   25,   23,   22,
-       13,   14,   16,   28,   15,   15,   14,   17,   18,   19,
-       20,   17,   17,   13,   28,   28,   28,   28,   28,   28,
-       28,   13,   18,   28,   26,   12,   28,   28,   12,   12,
-       21,   21,   21,   15,   15,   17,   17,   17,   17,   24,
-       24,   24,   24,    3,   28,   28,   28,   28,   28,   28,
-       28,   28,   28,   28,   28,   28
+        4,    5,    6,    7,    8,    9,   10,   11,   12,   13,
+       14,   15,   16,   17,   18,   19,   20,   21,   22,   23,
+        8,    7,    4,   25,   33,   25,   27,   33,   39,   37,
+       33,   33,   27,   33,   33,   30,   30,   39,   38,   38,
+       34,   37,   25,   26,   25,   35,   34,   28,   40,   40,
+       40,   40,   27,   40,   40,   40,   40,   40,   27,   26,
+       29,   40,   40,   40,   40,   40,   30,   31,   40,   32,
+       40,   40,   40,   40,   40,   29,   29,   24,   40,   24,
+       29,   29,   36,   36,    3,   40,   40,   40,   40,   40,
+       40,   40,   40,   40,   40,   40,   40,   40,   40,   40,
+
+       40,   40,   40,   40,   40,   40,   40,   40
     } ;
 
-static const flex_int16_t yy_chk[77] =
+static const flex_int16_t yy_chk[109] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    7,   27,   25,   24,   22,   19,   18,   17,
-        7,    8,    9,    3,    8,    8,    8,   10,   10,   10,
-       10,   10,   10,   12,    0,    0,    0,    0,    0,    0,
-        0,   12,   23,    0,   23,   29,    0,    0,   29,   29,
-       30,   30,   30,   31,   31,   32,   32,   32,   32,   33,
-       33,   33,   33,   28,   28,   28,   28,   28,   28,   28,
-       28,   28,   28,   28,   28,   28
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    7,   23,   24,   27,   33,   39,   37,
+       23,   23,   27,   33,   33,   35,   38,   36,   35,   38,
+       34,   31,    7,    8,   24,   30,   29,   14,    3,    0,
+        0,    0,    8,    0,    0,    0,    0,    0,    8,    8,
+       17,    0,    0,    0,    0,    0,   17,   17,    0,   17,
+        0,    0,    0,    0,    0,   17,   17,   41,    0,   41,
+       42,   42,   43,   43,   40,   40,   40,   40,   40,   40,
+       40,   40,   40,   40,   40,   40,   40,   40,   40,   40,
+
+       40,   40,   40,   40,   40,   40,   40,   40
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -461,14 +473,14 @@ int yy_flex_debug = 0;
 char *yytext;
 #line 1 "syntactic_analyser.l"
 #line 2 "syntactic_analyser.l"
-	void yyerror(char *s); //eliminando warning
+void yyerror(char *s); //eliminando warning
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "y.tab.h"
 
-#define SIZE 89	//HASH com um espaço maior que o número de entrada, evitando colisões
+#define SIZE 89 //HASH com um espaço maior que o número de entrada, evitando colisões
 #define RESERVERD_WORDS 17
 
 #define TRUE 1
@@ -476,13 +488,13 @@ char *yytext;
 
 int nlines=1, ntoken;
 
-struct reserved_word{	// 'objeto' que será inserido na hash
-	char * word;
-	char * return_message;
-	int return_value;
+struct reserved_word{   // 'objeto' que será inserido na hash
+    char * word;
+    char * return_message;
+    int return_value;
 };
 
-struct reserved_word reserveds_words[SIZE];	//Hash fixa e estática
+struct reserved_word reserveds_words[SIZE]; //Hash fixa e estática
 
 // Variáveis auxiliares para controle dos slots vazios da hash
 int positions_occuppieds[RESERVERD_WORDS];
@@ -490,182 +502,182 @@ int positions_counter = 0;
 
 // Função de inserção na hash
 void insert_word_aux(char * word, char * return_message, int return_value){
-	int length = strlen(word);
-	int asc_value = 0;
+    int length = strlen(word);
+    int asc_value = 0;
 
-	for(int i = 0; i < length; i++){
-		asc_value += (int)word[i];
-		//asc_value %=  size;
-	}
+    for(int i = 0; i < length; i++){
+        asc_value += (int)word[i];
+        //asc_value %=  size;
+    }
 
-	//asc_value = (int)asc_value/length;
+    //asc_value = (int)asc_value/length;
 
-	int position = asc_value % SIZE;
-	//printf("Inserindo %s na posição: %d, asc = %d\n", word, position, asc_value);
-	positions_occuppieds[positions_counter] = position;
-	positions_counter++;
+    int position = asc_value % SIZE;
+    //printf("Inserindo %s na posição: %d, asc = %d\n", word, position, asc_value);
+    positions_occuppieds[positions_counter] = position;
+    positions_counter++;
 
-	reserveds_words[position].word = word; 	// dados inseridos
-	reserveds_words[position].return_message = return_message;
-	reserveds_words[position].return_value = return_value;
+    reserveds_words[position].word = word;  // dados inseridos
+    reserveds_words[position].return_message = return_message;
+    reserveds_words[position].return_value = return_value;
 }
 
 // Função que busca as palavras na hash
 struct reserved_word find_reserved_words(char *word){
-	int length = strlen(word);
-	if(length <= 9){
-		int asc_value = 0;
+    int length = strlen(word);
+    if(length <= 9){
+        int asc_value = 0;
 
-		for(int i = 0; i < length; i++){
-			asc_value += (int)word[i];
-			//asc_value /=  length ;
-		}
+        for(int i = 0; i < length; i++){
+            asc_value += (int)word[i];
+            //asc_value /=  length ;
+        }
 
-		int position = asc_value % SIZE;
-		//printf("Buscando %s na posição %d\n\n", word, position);
+        int position = asc_value % SIZE;
+        //printf("Buscando %s na posição %d\n\n", word, position);
 
-		if(strcmp(reserveds_words[position].word, word) == 0)
-			return reserveds_words[position];
-	}
+        if(strcmp(reserveds_words[position].word, word) == 0)
+            return reserveds_words[position];
+    }
 
-	struct reserved_word nulo;
-	nulo.word = "@null";
+    struct reserved_word nulo;
+    nulo.word = "@null";
 
-	return nulo;
+    return nulo;
 }
 
 // Função que inicializa a hash com as palavras reservadas
 void insert_word(int i){
-	char * word;
-	char * return_message;
+    char * word;
+    char * return_message;
 
-	if(i == 0){
-		word = (char*)malloc(sizeof(char) * 7);
-		word = "program";
-		return_message = (char*)malloc(sizeof(char) * 15);
-		return_message = "SIMBOLO_PROGRAM";
-	}
-	else if(i == 1){
-		word = (char*)malloc(sizeof(char) * 5);
-		word = "begin";
-		return_message = (char*)malloc(sizeof(char) * 13);
-		return_message = "SIMBOLO_BEGIN";
-	}
-	else if(i == 2){
-		word = (char*)malloc(sizeof(char) * 3);
-		word = "end";
-		return_message = (char*)malloc(sizeof(char) * 11);
-		return_message = "SIMBOLO_END";
-	}
-	else if(i == 3){
-		word = (char*)malloc(sizeof(char) * 5);
-		word = "const";
-		return_message = (char*)malloc(sizeof(char) * 13);
-		return_message = "SIMBOLO_CONST";
-	}
-	else if(i == 4){
-		word = (char*)malloc(sizeof(char) * 3);
-		word = "var";
-		return_message = (char*)malloc(sizeof(char) * 11);
-		return_message = "SIMBOLO_VAR";
-	}
-	else if(i == 5){
-		word = (char*)malloc(sizeof(char) * 4);
-		word = "real";
-		return_message = (char*)malloc(sizeof(char) * 12);
-		return_message = "SIMBOLO_REAL";
-	}
-	else if(i == 6){
-		word = (char*)malloc(sizeof(char) * 7);
-		word = "integer";
-		return_message = (char*)malloc(sizeof(char) * 15);
-		return_message = "SIMBOLO_INTEGER";
-	}
-	else if(i == 7){
-		word = (char*)malloc(sizeof(char) * 9);
-		word = "procedure";
-		return_message = (char*)malloc(sizeof(char) * 17);
-		return_message = "SIMBOLO_PROCEDURE";
-	}
-	else if(i == 8){
-		word = (char*)malloc(sizeof(char) * 4);
-		word = "else";
-		return_message = (char*)malloc(sizeof(char) * 12);
-		return_message = "SIMBOLO_ELSE";
-	}
-	else if(i == 9){
-		word = (char*)malloc(sizeof(char) * 4);
-		word = "read";
-		return_message = (char*)malloc(sizeof(char) * 12);
-		return_message = "SIMBOLO_READ";
-	}
-	else if(i == 10){
-		word = (char*)malloc(sizeof(char) * 5);
-		word = "write";
-		return_message = (char*)malloc(sizeof(char) * 13);
-		return_message = "SIMBOLO_WRITE";
-	}
-	else if(i == 11){
-		word = (char*)malloc(sizeof(char) * 5);
-		word = "while";
-		return_message = (char*)malloc(sizeof(char) * 13);
-		return_message = "SIMBOLO_WHILE";
-	}
-	else if(i == 12){
-		word = (char*)malloc(sizeof(char) * 2);
-		word = "if";
-		return_message = (char*)malloc(sizeof(char) * 10);
-		return_message = "SIMBOLO_IF";
-	}
-	else if(i == 13){
-		word = (char*)malloc(sizeof(char) * 4);
-		word = "then";
-		return_message = (char*)malloc(sizeof(char) * 12);
-		return_message = "SIMBOLO_THEN";
-	}
-	else if(i == 14){
-		word = (char*)malloc(sizeof(char) * 2);
-		word = "do";
-		return_message = (char*)malloc(sizeof(char) * 10);
-		return_message = "SIMBOLO_DO";
-	}
-	else if(i == 15){
-		word = (char*)malloc(sizeof(char) * 3);
-		word = "for";
-		return_message = (char*)malloc(sizeof(char) * 11);
-		return_message = "SIMBOLO_FOR";
-	}
-	else if(i == 16){
-		word = (char*)malloc(sizeof(char) * 2);
-		word = "to";
-		return_message = (char*)malloc(sizeof(char) * 10);
-		return_message = "SIMBOLO_TO";
-	}
+    if(i == 0){
+        word = (char*)malloc(sizeof(char) * 7);
+        word = "program";
+        return_message = (char*)malloc(sizeof(char) * 15);
+        return_message = "SIMBOLO_PROGRAM";
+    }
+    else if(i == 1){
+        word = (char*)malloc(sizeof(char) * 5);
+        word = "begin";
+        return_message = (char*)malloc(sizeof(char) * 13);
+        return_message = "SIMBOLO_BEGIN";
+    }
+    else if(i == 2){
+        word = (char*)malloc(sizeof(char) * 3);
+        word = "end";
+        return_message = (char*)malloc(sizeof(char) * 11);
+        return_message = "SIMBOLO_END";
+    }
+    else if(i == 3){
+        word = (char*)malloc(sizeof(char) * 5);
+        word = "const";
+        return_message = (char*)malloc(sizeof(char) * 13);
+        return_message = "SIMBOLO_CONST";
+    }
+    else if(i == 4){
+        word = (char*)malloc(sizeof(char) * 3);
+        word = "var";
+        return_message = (char*)malloc(sizeof(char) * 11);
+        return_message = "SIMBOLO_VAR";
+    }
+    else if(i == 5){
+        word = (char*)malloc(sizeof(char) * 4);
+        word = "real";
+        return_message = (char*)malloc(sizeof(char) * 12);
+        return_message = "SIMBOLO_REAL";
+    }
+    else if(i == 6){
+        word = (char*)malloc(sizeof(char) * 7);
+        word = "integer";
+        return_message = (char*)malloc(sizeof(char) * 15);
+        return_message = "SIMBOLO_INTEGER";
+    }
+    else if(i == 7){
+        word = (char*)malloc(sizeof(char) * 9);
+        word = "procedure";
+        return_message = (char*)malloc(sizeof(char) * 17);
+        return_message = "SIMBOLO_PROCEDURE";
+    }
+    else if(i == 8){
+        word = (char*)malloc(sizeof(char) * 4);
+        word = "else";
+        return_message = (char*)malloc(sizeof(char) * 12);
+        return_message = "SIMBOLO_ELSE";
+    }
+    else if(i == 9){
+        word = (char*)malloc(sizeof(char) * 4);
+        word = "read";
+        return_message = (char*)malloc(sizeof(char) * 12);
+        return_message = "SIMBOLO_READ";
+    }
+    else if(i == 10){
+        word = (char*)malloc(sizeof(char) * 5);
+        word = "write";
+        return_message = (char*)malloc(sizeof(char) * 13);
+        return_message = "SIMBOLO_WRITE";
+    }
+    else if(i == 11){
+        word = (char*)malloc(sizeof(char) * 5);
+        word = "while";
+        return_message = (char*)malloc(sizeof(char) * 13);
+        return_message = "SIMBOLO_WHILE";
+    }
+    else if(i == 12){
+        word = (char*)malloc(sizeof(char) * 2);
+        word = "if";
+        return_message = (char*)malloc(sizeof(char) * 10);
+        return_message = "SIMBOLO_IF";
+    }
+    else if(i == 13){
+        word = (char*)malloc(sizeof(char) * 4);
+        word = "then";
+        return_message = (char*)malloc(sizeof(char) * 12);
+        return_message = "SIMBOLO_THEN";
+    }
+    else if(i == 14){
+        word = (char*)malloc(sizeof(char) * 2);
+        word = "do";
+        return_message = (char*)malloc(sizeof(char) * 10);
+        return_message = "SIMBOLO_DO";
+    }
+    else if(i == 15){
+        word = (char*)malloc(sizeof(char) * 3);
+        word = "for";
+        return_message = (char*)malloc(sizeof(char) * 11);
+        return_message = "SIMBOLO_FOR";
+    }
+    else if(i == 16){
+        word = (char*)malloc(sizeof(char) * 2);
+        word = "to";
+        return_message = (char*)malloc(sizeof(char) * 10);
+        return_message = "SIMBOLO_TO";
+    }
 
-	insert_word_aux(word, return_message, (i + 3)); // Realmente inserindo na hash
+    insert_word_aux(word, return_message, (i + 3)); // Realmente inserindo na hash
 }
 
 void create_hash(){
-	// Insere as palavras reservadas
-	for(int i = 0; i < RESERVERD_WORDS; i++)
-		insert_word(i);
+    // Insere as palavras reservadas
+    for(int i = 0; i < RESERVERD_WORDS; i++)
+        insert_word(i);
 
-	// Indica as posições vazias da hash como inválidas
-	for(int i = 0; i < SIZE; i++){
-		int isOcuppied = FALSE;
-		for(int j = 0; j < RESERVERD_WORDS; j++){
-			if(i == positions_occuppieds[j]){
-				isOcuppied = TRUE;
-				break;
-			}
-		}
-		if(isOcuppied == FALSE)
-			reserveds_words[i].word = "@null";
-	}
+    // Indica as posições vazias da hash como inválidas
+    for(int i = 0; i < SIZE; i++){
+        int isOcuppied = FALSE;
+        for(int j = 0; j < RESERVERD_WORDS; j++){
+            if(i == positions_occuppieds[j]){
+                isOcuppied = TRUE;
+                break;
+            }
+        }
+        if(isOcuppied == FALSE)
+            reserveds_words[i].word = "@null";
+    }
 }
 
-#line 668 "lex.yy.c"
-#line 669 "lex.yy.c"
+#line 680 "lex.yy.c"
+#line 681 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -882,10 +894,10 @@ YY_DECL
 		}
 
 	{
-#line 212 "syntactic_analyser.l"
+#line 213 "syntactic_analyser.l"
 
 
-#line 889 "lex.yy.c"
+#line 901 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -912,13 +924,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 29 )
+				if ( yy_current_state >= 41 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 64 );
+		while ( yy_base[yy_current_state] != 85 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -944,88 +956,155 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 214 "syntactic_analyser.l"
+#line 215 "syntactic_analyser.l"
 ;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 215 "syntactic_analyser.l"
+#line 216 "syntactic_analyser.l"
 ;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 217 "syntactic_analyser.l"
+#line 218 "syntactic_analyser.l"
 {return NUMERO_INT;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 218 "syntactic_analyser.l"
+#line 219 "syntactic_analyser.l"
 {return NUMERO_REAL;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 220 "syntactic_analyser.l"
+#line 221 "syntactic_analyser.l"
 {ECHO; yyerror("Numero mal formatado\n"); return -1;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 221 "syntactic_analyser.l"
+#line 222 "syntactic_analyser.l"
 {ECHO; yyerror("Numero mal formatado\n"); return -1;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 223 "syntactic_analyser.l"
+#line 224 "syntactic_analyser.l"
 {ECHO; yyerror("Identificador mal formatado\n"); return -1;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 224 "syntactic_analyser.l"
+#line 225 "syntactic_analyser.l"
 {ECHO; yyerror("Comentário não fechado\n"); return -1;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 226 "syntactic_analyser.l"
-{struct reserved_word reserved = find_reserved_words(yytext);
-			if(strcmp(reserved.word, "@null") != 0){
-				if(strcmp(reserved.return_message, "SIMBOLO_PROGRAM") == 0) return SIMBOLO_PROGRAM;
-				else if(strcmp(reserved.return_message, "SIMBOLO_BEGIN") == 0) return SIMBOLO_BEGIN;
-				else if(strcmp(reserved.return_message, "SIMBOLO_END") == 0) return SIMBOLO_END;
-				else if(strcmp(reserved.return_message, "SIMBOLO_CONST") == 0) return SIMBOLO_CONST;
-				else if(strcmp(reserved.return_message, "SIMBOLO_VAR") == 0) return SIMBOLO_VAR;
-				else if(strcmp(reserved.return_message, "SIMBOLO_REAL") == 0) return SIMBOLO_REAL;
-				else if(strcmp(reserved.return_message, "SIMBOLO_INTEGER") == 0) return SIMBOLO_INTEGER;
-				else if(strcmp(reserved.return_message, "SIMBOLO_PROCEDURE") == 0) return SIMBOLO_PROCEDURE;
-				else if(strcmp(reserved.return_message, "SIMBOLO_ELSE") == 0) return SIMBOLO_ELSE;
-				else if(strcmp(reserved.return_message, "SIMBOLO_READ") == 0) return SIMBOLO_READ;
-				else if(strcmp(reserved.return_message, "SIMBOLO_WRITE") == 0) return SIMBOLO_WRITE;
-				else if(strcmp(reserved.return_message, "SIMBOLO_WHILE") == 0) return SIMBOLO_WHILE;
-				else if(strcmp(reserved.return_message, "SIMBOLO_IF") == 0) return SIMBOLO_IF;
-				else if(strcmp(reserved.return_message, "SIMBOLO_THEN") == 0) return SIMBOLO_THEN;
-				else if(strcmp(reserved.return_message, "SIMBOLO_DO") == 0) return SIMBOLO_DO;
-				else if(strcmp(reserved.return_message, "SIMBOLO_FOR") == 0) return SIMBOLO_FOR;
-				else if(strcmp(reserved.return_message, "SIMBOLO_TO") == 0) return SIMBOLO_TO;
-				//return reserved.return_message;
-			}
-			return IDENT;
-		}
+#line 227 "syntactic_analyser.l"
+{return DOIS_PONTOS;}
 	YY_BREAK
 case 10:
-/* rule 10 can match eol */
 YY_RULE_SETUP
-#line 250 "syntactic_analyser.l"
-{nlines++;}
+#line 228 "syntactic_analyser.l"
+{return IGUAL;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 252 "syntactic_analyser.l"
-{return yytext[0];}
+#line 229 "syntactic_analyser.l"
+{return PONTO_VIRGULA;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 253 "syntactic_analyser.l"
+#line 230 "syntactic_analyser.l"
+{return VIRGULA;}
+	YY_BREAK
+case 13:
+YY_RULE_SETUP
+#line 231 "syntactic_analyser.l"
+{return MULT;}
+	YY_BREAK
+case 14:
+YY_RULE_SETUP
+#line 232 "syntactic_analyser.l"
+{return DIV;}
+	YY_BREAK
+case 15:
+YY_RULE_SETUP
+#line 233 "syntactic_analyser.l"
+{return SOMA;}
+	YY_BREAK
+case 16:
+YY_RULE_SETUP
+#line 234 "syntactic_analyser.l"
+{return SUBTRACAO;}
+	YY_BREAK
+case 17:
+YY_RULE_SETUP
+#line 235 "syntactic_analyser.l"
+{return ABRE_P;}
+	YY_BREAK
+case 18:
+YY_RULE_SETUP
+#line 236 "syntactic_analyser.l"
+{return FECHA_P;}
+	YY_BREAK
+case 19:
+YY_RULE_SETUP
+#line 237 "syntactic_analyser.l"
+{return MAIOR;}
+	YY_BREAK
+case 20:
+YY_RULE_SETUP
+#line 238 "syntactic_analyser.l"
+{return MENOR;}
+	YY_BREAK
+case 21:
+YY_RULE_SETUP
+#line 239 "syntactic_analyser.l"
+{return PONTO;}
+	YY_BREAK
+case 22:
+YY_RULE_SETUP
+#line 241 "syntactic_analyser.l"
+{struct reserved_word reserved = find_reserved_words(yytext);
+            if(strcmp(reserved.word, "@null") != 0){
+                if(strcmp(reserved.return_message, "SIMBOLO_PROGRAM") == 0) return SIMBOLO_PROGRAM;
+                else if(strcmp(reserved.return_message, "SIMBOLO_BEGIN") == 0) return SIMBOLO_BEGIN;
+                else if(strcmp(reserved.return_message, "SIMBOLO_END") == 0) return SIMBOLO_END;
+                else if(strcmp(reserved.return_message, "SIMBOLO_CONST") == 0) return SIMBOLO_CONST;
+                else if(strcmp(reserved.return_message, "SIMBOLO_VAR") == 0) return SIMBOLO_VAR;
+                else if(strcmp(reserved.return_message, "SIMBOLO_REAL") == 0) return SIMBOLO_REAL;
+                else if(strcmp(reserved.return_message, "SIMBOLO_INTEGER") == 0) return SIMBOLO_INTEGER;
+                else if(strcmp(reserved.return_message, "SIMBOLO_PROCEDURE") == 0) return SIMBOLO_PROCEDURE;
+                else if(strcmp(reserved.return_message, "SIMBOLO_ELSE") == 0) return SIMBOLO_ELSE;
+                else if(strcmp(reserved.return_message, "SIMBOLO_READ") == 0) return SIMBOLO_READ;
+                else if(strcmp(reserved.return_message, "SIMBOLO_WRITE") == 0) return SIMBOLO_WRITE;
+                else if(strcmp(reserved.return_message, "SIMBOLO_WHILE") == 0) return SIMBOLO_WHILE;
+                else if(strcmp(reserved.return_message, "SIMBOLO_IF") == 0) return SIMBOLO_IF;
+                else if(strcmp(reserved.return_message, "SIMBOLO_THEN") == 0) return SIMBOLO_THEN;
+                else if(strcmp(reserved.return_message, "SIMBOLO_DO") == 0) return SIMBOLO_DO;
+                else if(strcmp(reserved.return_message, "SIMBOLO_FOR") == 0) return SIMBOLO_FOR;
+                else if(strcmp(reserved.return_message, "SIMBOLO_TO") == 0) return SIMBOLO_TO;
+                printf("Huge mistake\n");
+                //return reserved.return_message;
+            }
+            //printf("Ident = %s", yytext);
+            return IDENT;
+        }
+	YY_BREAK
+case 23:
+/* rule 23 can match eol */
+YY_RULE_SETUP
+#line 267 "syntactic_analyser.l"
+{nlines++;}
+	YY_BREAK
+case 24:
+YY_RULE_SETUP
+#line 270 "syntactic_analyser.l"
+{return *yytext;}
+	YY_BREAK
+case 25:
+YY_RULE_SETUP
+#line 271 "syntactic_analyser.l"
 ECHO;
 	YY_BREAK
-#line 1029 "lex.yy.c"
+#line 1108 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1322,7 +1401,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 29 )
+			if ( yy_current_state >= 41 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1350,11 +1429,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 29 )
+		if ( yy_current_state >= 41 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 28);
+	yy_is_jam = (yy_current_state == 40);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -2030,11 +2109,11 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 253 "syntactic_analyser.l"
+#line 271 "syntactic_analyser.l"
 
-/*
+
 int yywrap(void)
 {
-  	return 1;
+    return 1;
 }
-*/
+

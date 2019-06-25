@@ -1,6 +1,6 @@
 program p;
 var x: integer;
-beeegin
+bedsgin
 	x:=1;
 	x:=x+1;
 end.

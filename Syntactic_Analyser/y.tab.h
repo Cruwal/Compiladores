@@ -66,7 +66,20 @@ extern int yydebug;
     SIMBOLO_THEN = 276,
     SIMBOLO_DO = 277,
     SIMBOLO_FOR = 278,
-    SIMBOLO_TO = 279
+    SIMBOLO_TO = 279,
+    DOIS_PONTOS = 280,
+    IGUAL = 281,
+    PONTO_VIRGULA = 282,
+    VIRGULA = 283,
+    MULT = 284,
+    DIV = 285,
+    SOMA = 286,
+    SUBTRACAO = 287,
+    ABRE_P = 288,
+    FECHA_P = 289,
+    MAIOR = 290,
+    MENOR = 291,
+    PONTO = 292
   };
 #endif
 /* Tokens.  */
@@ -92,6 +105,19 @@ extern int yydebug;
 #define SIMBOLO_DO 277
 #define SIMBOLO_FOR 278
 #define SIMBOLO_TO 279
+#define DOIS_PONTOS 280
+#define IGUAL 281
+#define PONTO_VIRGULA 282
+#define VIRGULA 283
+#define MULT 284
+#define DIV 285
+#define SOMA 286
+#define SUBTRACAO 287
+#define ABRE_P 288
+#define FECHA_P 289
+#define MAIOR 290
+#define MENOR 291
+#define PONTO 292
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
